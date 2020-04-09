@@ -134,6 +134,25 @@ timedatectl set-timezone Asia/Shanghai
 timedatectl set-local-rtc 1
 hwclock --systohc --utc
 
+cat >>/etc/vimrc<<EOF
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType golang setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType yml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
+set ls=2
+set incsearch
+set hlsearch
+syntax on
+set ruler
+EOF
+
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 yum --disablerepo=\* --enablerepo=elrepo-kernel repolist
